@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"test": "vitest",
+		"test:bench": "vitest bench"
+	},
+	"devDependencies": {
+		"vitest": "^0.34.6"
+	}
+}

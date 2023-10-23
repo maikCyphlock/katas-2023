@@ -1,5 +1,5 @@
 //my solution
-function MySolution(s) {
+export function MySolution(s) {
     const NonrepeatedChar = []
     const separatedString = s.trim().split('')
     let IsFinished = false
@@ -17,7 +17,8 @@ function MySolution(s) {
 
 //better solution
 
-function BetterSolution(s) {
+export function BetterSolution(s) {
+
     const charMap = {};
     const separatedString = s.trim().split('');
     for (let char of separatedString) {
