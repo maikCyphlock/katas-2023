@@ -14,15 +14,15 @@ function toUnderscore(string) {
     const SplittedString = string.split('');
 
     return SplittedString.map((letter, index) => {
-        if (letter === letter.toUpperCase()) {
+        if (letter === letter.toUpperCase() && index !== 0) {
             return SplittedString[index] = '_' + letter.toLowerCase();
         }
         else {
-            return letter
+            return letter.toLowerCase()
         }
     }).join('')
 
 }
 
-console.log(toUnderscore('holaMundoJajaJa'))
+console.log(toUnderscore('HolaMundoJajaJa'))
 console.log(toUnderscore('holaMundoJajaJa'))
