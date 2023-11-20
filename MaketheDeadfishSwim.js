@@ -35,3 +35,30 @@ function solution(instructions) {
 
 console.log(solution("iiiso")) // --> 9 
 console.log(solution("iiisdosof")) // --> [8,64]
+
+
+function Codember(instructions) {
+    let ArrayToReturn = []
+    let value = 0;
+    let SplittedInstruction = instructions.split('')
+    const MAP = {
+        "#": () => value++,
+        "@": () => value--,
+        "*": () => value = value * value,
+        "&": () => ArrayToReturn.push(value)
+    }
+
+    SplittedInstruction.forEach(instruction => {
+        try {
+            MAP[instruction]()
+        } catch (error) {
+            return
+        }
+    });
+    return ArrayToReturn.join('')
+}
+
+
+console.log(
+    Codember("&###@&*&###@@##@##&######@@#####@#@#@#@##@@@@@@@@@@@@@@@*&&@@@@@@@@@####@@@@@@@@@#########&#&##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@&")
+)
