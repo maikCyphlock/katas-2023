@@ -9,8 +9,8 @@ For n = 3, the output should be
 solution(n) = 13.
 */
 function solution(n) {
-    return ((n - 1) * (n * 2)) + 1;
+  return (n - 1) * (n * 2) + 1;
 }
-console.log(solution(2))
-console.log(solution(3))
-console.log(solution(4))
+console.log(solution(2));
+console.log(solution(3));
+console.log(solution(4));

@@ -13,52 +13,52 @@ parse("iiisdoso") => [ 8, 64 ]
  */
 
 function solution(instructions) {
-    let ArrayToReturn = []
-    let value = 0;
-    let SplittedInstruction = instructions.split('')
-    const MAP = {
-        i: () => value++,
-        d: () => value--,
-        s: () => value = value ** 2,
-        o: () => ArrayToReturn.push(value)
-    }
+  let ArrayToReturn = [];
+  let value = 0;
+  let SplittedInstruction = instructions.split("");
+  const MAP = {
+    i: () => value++,
+    d: () => value--,
+    s: () => (value = value ** 2),
+    o: () => ArrayToReturn.push(value),
+  };
 
-    SplittedInstruction.forEach(instruction => {
-        try {
-            MAP[instruction]()
-        } catch (error) {
-            return
-        }
-    });
-    return ArrayToReturn
+  SplittedInstruction.forEach((instruction) => {
+    try {
+      MAP[instruction]();
+    } catch (error) {
+      return;
+    }
+  });
+  return ArrayToReturn;
 }
 
-console.log(solution("iiiso")) // --> 9 
-console.log(solution("iiisdosof")) // --> [8,64]
-
+console.log(solution("iiiso")); // --> 9
+console.log(solution("iiisdosof")); // --> [8,64]
 
 function Codember(instructions) {
-    let ArrayToReturn = []
-    let value = 0;
-    let SplittedInstruction = instructions.split('')
-    const MAP = {
-        "#": () => value++,
-        "@": () => value--,
-        "*": () => value = value * value,
-        "&": () => ArrayToReturn.push(value)
-    }
+  let ArrayToReturn = [];
+  let value = 0;
+  let SplittedInstruction = instructions.split("");
+  const MAP = {
+    "#": () => value++,
+    "@": () => value--,
+    "*": () => (value = value * value),
+    "&": () => ArrayToReturn.push(value),
+  };
 
-    SplittedInstruction.forEach(instruction => {
-        try {
-            MAP[instruction]()
-        } catch (error) {
-            return
-        }
-    });
-    return ArrayToReturn.join('')
+  SplittedInstruction.forEach((instruction) => {
+    try {
+      MAP[instruction]();
+    } catch (error) {
+      return;
+    }
+  });
+  return ArrayToReturn.join("");
 }
 
-
 console.log(
-    Codember("&###@&*&###@@##@##&######@@#####@#@#@#@##@@@@@@@@@@@@@@@*&&@@@@@@@@@####@@@@@@@@@#########&#&##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@&")
-)
+  Codember(
+    "&###@&*&###@@##@##&######@@#####@#@#@#@##@@@@@@@@@@@@@@@*&&@@@@@@@@@####@@@@@@@@@#########&#&##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@##@@&"
+  )
+);

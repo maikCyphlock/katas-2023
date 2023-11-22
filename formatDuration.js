@@ -26,48 +26,46 @@ A component will not appear at all if its value happens to be zero. Hence, 1 min
 A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time. 
  */
 function solution(seconds) {
-    const years = Math.floor(seconds / 31536000)
-    const days = Math.floor((seconds % 31536000) / 86400)
-    const hours = Math.floor(((seconds % 31536000) % 86400) / 3600)
-    const minutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60)
-    const seconds2 = (((seconds % 31536000) % 86400) % 3600) % 60
-    let time = []
+  const years = Math.floor(seconds / 31536000);
+  const days = Math.floor((seconds % 31536000) / 86400);
+  const hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+  const minutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+  const seconds2 = (((seconds % 31536000) % 86400) % 3600) % 60;
+  let time = [];
 
-    if (years > 0) {
-        time.push(`${years} year${years > 1 ? 's' : ''}`)
-    }
+  if (years > 0) {
+    time.push(`${years} year${years > 1 ? "s" : ""}`);
+  }
 
-    if (days > 0) {
-        time.push(`${days} day${days > 1 ? 's' : ''}`)
-    }
+  if (days > 0) {
+    time.push(`${days} day${days > 1 ? "s" : ""}`);
+  }
 
-    if (hours > 0) {
-        time.push(`${hours} hour${hours > 1 ? 's' : ''}`)
-    }
+  if (hours > 0) {
+    time.push(`${hours} hour${hours > 1 ? "s" : ""}`);
+  }
 
-    if (minutes > 0) {
-        time.push(`${minutes} minute${minutes > 1 ? 's' : ''}`)
-    }
+  if (minutes > 0) {
+    time.push(`${minutes} minute${minutes > 1 ? "s" : ""}`);
+  }
 
-    if (seconds2 > 0) {
-        time.push(`${seconds2} second${seconds2 > 1 ? 's' : ''}`)
-    }
+  if (seconds2 > 0) {
+    time.push(`${seconds2} second${seconds2 > 1 ? "s" : ""}`);
+  }
 
-    if (time.length === 0) {
-        return 'now'
-    }
+  if (time.length === 0) {
+    return "now";
+  }
 
-    if (time.length === 1) {
-        return time[0]
-    }
+  if (time.length === 1) {
+    return time[0];
+  }
 
-    if (time.length === 2) {
+  if (time.length === 2) {
+    return `${time[0]} and ${time[1]}`;
+  }
 
-        return `${time[0]} and ${time[1]}`
-    }
-
-    return time.slice(0, -1).join(', ') + ` and ${time[time.length - 1]}`
-
+  return time.slice(0, -1).join(", ") + ` and ${time[time.length - 1]}`;
 }
 
-console.log(solution(999999999999999))
+console.log(solution(999999999999999));

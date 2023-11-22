@@ -5,46 +5,68 @@
  */
 
 function solution(string) {
-    const alphabet = [
-        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-    ]
-    const splittedString = string.split('')
-    let newMessage = ''
+  const alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  const splittedString = string.split("");
+  let newMessage = "";
 
-    splittedString.forEach(word => {
-        const index = alphabet.findIndex((letter) => letter === word)
-        const newIndex = index + 13;
+  splittedString.forEach((word) => {
+    const index = alphabet.findIndex((letter) => letter === word);
+    const newIndex = index + 13;
 
-
-        newMessage += alphabet[newIndex % 26]
-    });
-    return newMessage
+    newMessage += alphabet[newIndex % 26];
+  });
+  return newMessage;
 }
-console.log(
-    solution('mrfg'))
-
+console.log(solution("mrfg"));
 
 //implement Rot13 algorithm
 // IA WINS THIS
 function rot13(str) {
-    var result = "";
+  var result = "";
 
-    for (var i = 0; i < str.length; i++) {
-        var charCode = str.charCodeAt(i);
+  for (var i = 0; i < str.length; i++) {
+    var charCode = str.charCodeAt(i);
 
-        if (charCode >= 65 && charCode <= 90) {
-            // Uppercase letters
-            result += String.fromCharCode(((charCode - 65 + 13) % 26) + 65);
-        } else if (charCode >= 97 && charCode <= 122) {
-            // Lowercase letters
-            result += String.fromCharCode(((charCode - 97 + 13) % 26) + 97);
-        } else {
-            // Non-alphabetic characters
-            result += str.charAt(i);
-        }
+    if (charCode >= 65 && charCode <= 90) {
+      // Uppercase letters
+      result += String.fromCharCode(((charCode - 65 + 13) % 26) + 65);
+    } else if (charCode >= 97 && charCode <= 122) {
+      // Lowercase letters
+      result += String.fromCharCode(((charCode - 97 + 13) % 26) + 97);
+    } else {
+      // Non-alphabetic characters
+      result += str.charAt(i);
     }
+  }
 
-    return result;
+  return result;
 }
 
 let encrypted = rot13("Hello, World!");

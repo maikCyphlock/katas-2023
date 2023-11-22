@@ -36,16 +36,16 @@ Return true if it is possible to remove one element from the array in order to g
 //     return c > 0
 // }
 function solution(seq) {
-    var bad = 0
-    for (var i = 1; i < seq.length; i++) if (seq[i] <= seq[i - 1]) {
-        bad++
-        if (bad > 1) return false
-        if (seq[i] <= seq[i - 2] && seq[i + 1] <= seq[i - 1]) return false
+  var bad = 0;
+  for (var i = 1; i < seq.length; i++)
+    if (seq[i] <= seq[i - 1]) {
+      bad++;
+      if (bad > 1) return false;
+      if (seq[i] <= seq[i - 2] && seq[i + 1] <= seq[i - 1]) return false;
     }
-    return true
+  return true;
 }
 
-
-console.log(solution([1, 3, 2]))
-console.log(solution([3, 6, 5, 8, 10, 20, 15]))
-console.log(solution([1, 2, 1, 2]))
+console.log(solution([1, 3, 2]));
+console.log(solution([3, 6, 5, 8, 10, 20, 15]));
+console.log(solution([1, 2, 1, 2]));

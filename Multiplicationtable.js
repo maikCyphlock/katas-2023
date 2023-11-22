@@ -14,15 +14,15 @@ For the given example, the return value should be:
  */
 
 function solution(size) {
-    const arr = []
-    for (let i = 1; i <= size; i++) {
-        const arr2 = []
-        for (let j = 1; j <= size; j++) {
-            arr2.push(i * j)
-        }
-        arr.push(arr2)
+  const arr = [];
+  for (let i = 1; i <= size; i++) {
+    const arr2 = [];
+    for (let j = 1; j <= size; j++) {
+      arr2.push(i * j);
     }
+    arr.push(arr2);
+  }
 
-    return arr
+  return arr;
 }
-console.log(solution(12))
+console.log(solution(12));

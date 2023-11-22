@@ -12,7 +12,6 @@ scramble('katas', 'steak') ==> False
 
 */
 
-
 /**
  * Scrambles two strings and checks if all characters in the second string are present in the first string.
  *
@@ -21,27 +20,23 @@ scramble('katas', 'steak') ==> False
  * @return {boolean} Returns true if all characters in str2 are present in str1, otherwise false.
  */
 function scramble(str1, str2) {
-    if (str1.length < str2.length) return false;
+  if (str1.length < str2.length) return false;
 
-    const letterCounts = {};
-    for (let i = 0; i < str1.length; i++) {
-        const letter = str1[i];
-        letterCounts[letter] = (letterCounts[letter] || 0) + 1;
-    }
+  const letterCounts = {};
+  for (let i = 0; i < str1.length; i++) {
+    const letter = str1[i];
+    letterCounts[letter] = (letterCounts[letter] || 0) + 1;
+  }
 
-    for (let i = 0; i < str2.length; i++) {
-        const letter = str2[i];
-        if (!letterCounts[letter]) return false;
-        letterCounts[letter] -= 1;
-    }
+  for (let i = 0; i < str2.length; i++) {
+    const letter = str2[i];
+    if (!letterCounts[letter]) return false;
+    letterCounts[letter] -= 1;
+  }
 
-    return true;
+  return true;
 }
 
-
-
-
-
-console.log(scramble('rkqodlw', 'world'))
-console.log(scramble('scriptjavx', 'javascript'))
-exports.scramble = scramble
+console.log(scramble("rkqodlw", "world"));
+console.log(scramble("scriptjavx", "javascript"));
+exports.scramble = scramble;

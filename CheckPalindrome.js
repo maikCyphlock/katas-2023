@@ -1,8 +1,7 @@
 function solution(inputString) {
-    const reversedString = inputString.split('').reverse().join('')
-    return inputString === reversedString ? true : false
+  const reversedString = inputString.split("").reverse().join("");
+  return inputString === reversedString ? true : false;
 }
 
-
-solution('abacabad')
-console.log(solution('arepera'));
+solution("abacabad");
+console.log(solution("arepera"));

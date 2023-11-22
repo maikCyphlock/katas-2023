@@ -6,12 +6,12 @@
 */
 
 function solution(string) {
-    const splittedString = string.split('');
-    const result = splittedString.reduce((c, v) => {
-        c[v] = (c[v] || 0) + 1
-        return c
-    }, {})
-    return result;
+  const splittedString = string.split("");
+  const result = splittedString.reduce((c, v) => {
+    c[v] = (c[v] || 0) + 1;
+    return c;
+  }, {});
+  return result;
 }
 
-console.log(solution('sdsd'))
+console.log(solution("sdsd"));
